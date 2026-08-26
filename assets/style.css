@@ -131,9 +131,7 @@ form{display:grid;gap:14px}label{font-weight:750;font-size:13px;color:var(--navy
   .reviews{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:repeat(2,1fr)}
 }
-  .hero{background:linear-gradient(90deg,#fff 0%,#fff 58%,rgba(255,255,255,.45) 100%),url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=85') center/cover}
-  .hero-copy{width:68%}.cards{grid-template-columns:repeat(2,1fr)}.feature-grid{grid-template-columns:repeat(2,1fr)}.feature:nth-child(2){border-right:0}.feature{margin-bottom:18px}.prof-banner{grid-template-columns:1fr}.prof-banner .photo{min-height:220px}.reviews{grid-template-columns:1fr}.footer-grid{grid-template-columns:repeat(2,1fr)}
-}
+ 
 @media(max-width:650px){
   .container{width:min(var(--max),calc(100% - 28px))}
   .topbar .container{justify-content:center;font-size:11px}.topbar span:nth-child(2){display:none}
