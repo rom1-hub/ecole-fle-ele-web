@@ -152,3 +152,19 @@ form{display:grid;gap:14px}label{font-weight:750;font-size:13px;color:var(--navy
 .article-hero{background:linear-gradient(135deg,var(--navy2),var(--navy));color:#fff;padding:62px 0}.article-hero h1{color:#fff;font-size:clamp(38px,5vw,56px);max-width:900px}.article-meta{color:#dce6f6;margin:0}.article-content{max-width:820px}.article-content h2{font-size:30px;margin-top:42px}.article-content h3{color:var(--navy);margin-top:28px}.article-content p,.article-content li{font-size:16px;line-height:1.75}.article-content ul{padding-left:22px}.article-content .table-wrap{overflow:auto;margin:22px 0}.article-content table{width:100%;border-collapse:collapse;min-width:620px}.article-content th,.article-content td{border:1px solid var(--line);padding:13px;text-align:left}.article-content th{background:var(--light);color:var(--navy)}.article-cta{margin-top:55px;padding:30px;border-radius:18px;background:var(--light);border:1px solid var(--line)}.article-cta h2{margin-top:0}.source-note{font-size:13px!important;color:var(--muted)!important;border-top:1px solid var(--line);margin-top:45px;padding-top:20px}.blog-cards{grid-template-columns:repeat(3,1fr);margin-bottom:30px}.blog-cards .card{min-height:240px}@media(max-width:1000px){.blog-cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.blog-cards{grid-template-columns:1fr}.article-content h2{font-size:26px}.article-content p,.article-content li{font-size:15px}}
 
 .cookie-notice{position:fixed;left:18px;right:18px;bottom:18px;z-index:100;background:#fff;border:1px solid var(--line);box-shadow:0 18px 50px rgba(8,37,90,.18);border-radius:16px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}.cookie-notice p{margin:4px 0 0;color:var(--muted);font-size:12.5px;max-width:760px}.cookie-actions{display:flex;gap:8px;flex-wrap:wrap}@media(max-width:650px){.cookie-notice{left:10px;right:10px;bottom:10px;display:block}.cookie-actions{margin-top:12px}.cookie-actions .btn{flex:1}}
+
+/* Enlaces dentro del contenido */
+.content p a,
+.content li a {
+  color: #d94f5c;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.content p a:hover,
+.content li a:hover {
+  color: #ff6870;
+}
