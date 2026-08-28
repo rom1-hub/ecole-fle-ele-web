@@ -3,6 +3,6 @@ Allow: /
 Disallow: /aviso-legal/
 Disallow: /politica-privacidad/
 Disallow: /politica-cookies/
-
-Sitemap: https://www.ecole-fle-ele.com/sitemap.xml
 Disallow: /contacto/gracias/
+
+Sitemap: https://ecole-fle-ele.com/sitemap.xml
