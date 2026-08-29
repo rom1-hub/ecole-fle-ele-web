@@ -1,9 +1,10 @@
-const toggle=document.querySelector('.mobile-toggle');
-const menu=document.querySelector('.menu');
-if(toggle&&menu){
-  toggle.addEventListener('click',()=>{
-    const open=menu.classList.toggle('menu-open');
-    toggle.setAttribute('aria-expanded',open?'true':'false');
+const toggle = document.querySelector('.mobile-toggle');
+const menu = document.querySelector('.menu');
+
+if (toggle && menu) {
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 }
 
@@ -14,22 +15,33 @@ if(toggle&&menu){
 (function () {
   const CONSENT_KEY = 'ecole_cookie_consent';
 
-  function loadGoogleAnalytics() {
-    if (window.ecoleGA_loaded) return;
-    window.ecoleGA_loaded = true;
-
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-3QLVRV8MDZ';
-    document.head.appendChild(script);
+  function loadGoogleAnalytics(eventName, eventParams) {
+    if (window.ecoleGA_loaded) {
+      if (eventName && window.gtag) {
+        window.gtag('event', eventName, eventParams || {});
+      }
+      return;
+    }
 
     window.dataLayer = window.dataLayer || [];
+
     window.gtag = function () {
       window.dataLayer.push(arguments);
     };
 
     window.gtag('js', new Date());
     window.gtag('config', 'G-3QLVRV8MDZ');
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-3QLVRV8MDZ';
+    document.head.appendChild(script);
+
+    window.ecoleGA_loaded = true;
+
+    if (eventName) {
+      window.gtag('event', eventName, eventParams || {});
+    }
   }
 
   function createCookieBanner() {
