@@ -1,8 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /aviso-legal/
-Disallow: /politica-privacidad/
-Disallow: /politica-cookies/
-Disallow: /contacto/gracias/
+
 
 Sitemap: https://ecole-fle-ele.com/sitemap.xml
