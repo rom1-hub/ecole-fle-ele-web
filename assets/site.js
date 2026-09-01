@@ -14,7 +14,8 @@ if (toggle && menu) {
    ========================= */
 
 (function () {
-  window.location
+
+  const CONSENT_KEY = 'ecole_cookie_consent_v2';
 
   function loadGoogleAnalytics(eventName, eventParams) {
 
@@ -82,6 +83,7 @@ if (toggle && menu) {
     const banner = document.createElement('div');
 
     banner.id = 'cookie-banner';
+    banner.className = 'cookie-notice';
 
     banner.innerHTML = `
       <div class="cookie-content">
