@@ -14,7 +14,7 @@ if (toggle && menu) {
    ========================= */
 
 (function () {
-  const CONSENT_KEY = 'ecole_cookie_consent';
+  window.location
 
   function loadGoogleAnalytics(eventName, eventParams) {
 
@@ -56,15 +56,19 @@ if (toggle && menu) {
      ========================= */
 
   function trackLeadIfNeeded() {
+  if (window.location.pathname.includes('/contacto/gracias/')) {
 
-    if (window.location.pathname.includes('/contacto/gracias/')) {
-
-      loadGoogleAnalytics('generate_lead', {
-        method: 'formulario_prueba_nivel'
-      });
-
+    if (sessionStorage.getItem('ecole_lead_tracked') === 'true') {
+      return;
     }
+
+    loadGoogleAnalytics('generate_lead', {
+      method: 'formulario_prueba_nivel'
+    });
+
+    sessionStorage.setItem('ecole_lead_tracked', 'true');
   }
+}
 
 
   /* =========================
