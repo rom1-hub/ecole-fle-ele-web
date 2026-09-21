@@ -1,4 +1,4 @@
-# SEO — arquitectura editorial v11
+# SEO — arquitectura editorial v12
 
 ## Objetivo
 Aumentar tráfico cualificado y convertirlo en contactos para clases de francés online. El blog no se plantea como contenido genérico: cada grupo de artículos responde a una intención de búsqueda y enlaza hacia una página comercial.
@@ -36,15 +36,15 @@ Este contenido funciona como pieza informativa y enlaza hacia la oferta de clase
 - `/blog/frances-trabajar-francia/` — intención: francés profesional / trabajo en Francia.
 - `/blog/errores-frances-espanol/` — intención: dificultades frecuentes de hispanohablantes.
 - `/blog/que-es-fle/` — intención: qué es FLE y qué significa Français Langue Étrangère.
+- `/blog/tcf-preparacion/` — intención: preparación TCF según modalidad y objetivo.
+- `/blog/tef-preparacion/` — intención: preparación TEF según versión y objetivo.
+- `/blog/frances-fisioterapeutas-vocabulario/` — intención: vocabulario y situaciones profesionales para fisioterapeutas.
 
 ## Próximos artículos prioritarios
 
-1. TCF: cómo prepararlo según tu objetivo.
-3. TEF: qué versión necesitas según tu proyecto.
-4. Francés para fisioterapeutas.
-5. Francés para odontólogos.
-6. Cómo aprender francés desde cero si hablas español.
-7. Cómo mejorar la comprensión oral en francés.
+1. Francés para odontólogos.
+2. Cómo aprender francés desde cero si hablas español.
+3. Cómo mejorar la comprensión oral en francés.
 
 ## Estrategia profesional
 
