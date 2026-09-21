@@ -16,6 +16,7 @@ Temas: DELF A1/A2/B1/B2, DELF Junior, DELF Prim, TCF, TEF, diferencias entre ex�
 ### 3. Francés profesional
 Página principal: `/frances-profesional/`
 Temas: trabajar en Francia, fisioterapeutas, odontólogos y comunicación profesional.
+Página especializada: `/frances-para-fisioterapeutas/` — preparación lingüística específica para fisioterapeutas.
 
 ### 4. Empresas
 Página principal: `/frances-para-empresas/`
