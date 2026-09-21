@@ -39,12 +39,12 @@ Este contenido funciona como pieza informativa y enlaza hacia la oferta de clase
 - `/blog/tcf-preparacion/` — intención: preparación TCF según modalidad y objetivo.
 - `/blog/tef-preparacion/` — intención: preparación TEF según versión y objetivo.
 - `/blog/frances-fisioterapeutas-vocabulario/` — intención: vocabulario y situaciones profesionales para fisioterapeutas.
+- `/blog/aprender-frances-desde-cero/` — intención: cómo empezar a aprender francés desde cero siendo hispanohablante.
 
 ## Próximos artículos prioritarios
 
 1. Francés para odontólogos.
-2. Cómo aprender francés desde cero si hablas español.
-3. Cómo mejorar la comprensión oral en francés.
+2. Cómo mejorar la comprensión oral en francés.
 
 ## Estrategia profesional
 
