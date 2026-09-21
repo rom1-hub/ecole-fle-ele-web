@@ -40,11 +40,12 @@ Este contenido funciona como pieza informativa y enlaza hacia la oferta de clase
 - `/blog/tef-preparacion/` — intención: preparación TEF según versión y objetivo.
 - `/blog/frances-fisioterapeutas-vocabulario/` — intención: vocabulario y situaciones profesionales para fisioterapeutas.
 - `/blog/aprender-frances-desde-cero/` — intención: cómo empezar a aprender francés desde cero siendo hispanohablante.
+- `/blog/mejorar-comprension-oral-frances/` — intención: mejorar la comprensión oral en francés.
 
 ## Próximos artículos prioritarios
 
 1. Francés para odontólogos.
-2. Cómo mejorar la comprensión oral en francés.
+
 
 ## Estrategia profesional
 
