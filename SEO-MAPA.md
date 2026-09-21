@@ -31,6 +31,7 @@ Este contenido funciona como pieza informativa y enlaza hacia la oferta de clase
 
 - `/blog/delf-b1-preparacion/` — intención: preparación DELF B1.
 - `/blog/delf-a2-preparacion/` — intención: preparación DELF A2.
+- `/blog/delf-b2-preparacion/` — intención: preparación DELF B2.
 - `/blog/delf-tcf-tef-diferencias/` — intención: comparar DELF, TCF y TEF.
 - `/blog/frances-trabajar-francia/` — intención: francés profesional / trabajo en Francia.
 - `/blog/errores-frances-espanol/` — intención: dificultades frecuentes de hispanohablantes.
@@ -38,8 +39,7 @@ Este contenido funciona como pieza informativa y enlaza hacia la oferta de clase
 
 ## Próximos artículos prioritarios
 
-1. Cómo preparar el DELF B2.
-2. TCF: cómo prepararlo según tu objetivo.
+1. TCF: cómo prepararlo según tu objetivo.
 3. TEF: qué versión necesitas según tu proyecto.
 4. Francés para fisioterapeutas.
 5. Francés para odontólogos.
