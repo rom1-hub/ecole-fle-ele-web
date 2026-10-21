@@ -278,3 +278,7 @@ form{display:grid;gap:14px}label{font-weight:750;font-size:13px;color:var(--navy
 .contact-box form .whatsapp-fields>div{min-width:0;width:100%}
 .contact-box form .whatsapp-fields select,.contact-box form .whatsapp-fields input{width:100%;min-width:0;box-sizing:border-box;padding:13px 9px}
 @media(max-width:380px){.contact-box form .whatsapp-fields{grid-template-columns:minmax(92px,0.75fr) minmax(0,1.5fr)!important;gap:6px!important}.contact-box form .whatsapp-fields select,.contact-box form .whatsapp-fields input{font-size:13px;padding:12px 7px}}
+
+/* Error visible de validación del campo WhatsApp */
+.contact-box form .whatsapp-error{margin:8px 0 0;color:#c62828;font-size:13px;font-weight:600;line-height:1.45}
+.contact-box form .whatsapp-error[hidden]{display:none!important}
