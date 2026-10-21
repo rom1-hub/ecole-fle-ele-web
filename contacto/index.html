@@ -51,8 +51,11 @@
     try {
       const response = await fetch(form.action, {
         method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new URLSearchParams(new FormData(form))
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(Object.fromEntries(new FormData(form).entries()))
       });
 
       let result;
