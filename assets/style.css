@@ -272,3 +272,9 @@ form{display:grid;gap:14px}label{font-weight:750;font-size:13px;color:var(--navy
 .whatsapp-fields{display:grid;grid-template-columns:minmax(118px,.7fr) minmax(0,1.6fr);gap:10px;align-items:end}
 .field-sub-label{display:block;margin-bottom:6px;font-size:12px;font-weight:600;color:var(--muted)}
 .whatsapp-fields select,.whatsapp-fields input{min-width:0}
+
+/* Mantener prefijo y teléfono en la misma fila, también en móvil */
+.contact-box form .whatsapp-fields{display:grid!important;grid-template-columns:minmax(105px,0.8fr) minmax(0,1.5fr)!important;gap:8px!important;align-items:end!important;width:100%}
+.contact-box form .whatsapp-fields>div{min-width:0;width:100%}
+.contact-box form .whatsapp-fields select,.contact-box form .whatsapp-fields input{width:100%;min-width:0;box-sizing:border-box;padding:13px 9px}
+@media(max-width:380px){.contact-box form .whatsapp-fields{grid-template-columns:minmax(92px,0.75fr) minmax(0,1.5fr)!important;gap:6px!important}.contact-box form .whatsapp-fields select,.contact-box form .whatsapp-fields input{font-size:13px;padding:12px 7px}}
