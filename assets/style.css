@@ -267,3 +267,8 @@ form{display:grid;gap:14px}label{font-weight:750;font-size:13px;color:var(--navy
     flex: 1;
   }
 }
+
+/* Campo de WhatsApp: prefijo y número en una sola línea */
+.whatsapp-fields{display:grid;grid-template-columns:minmax(118px,.7fr) minmax(0,1.6fr);gap:10px;align-items:end}
+.field-sub-label{display:block;margin-bottom:6px;font-size:12px;font-weight:600;color:var(--muted)}
+.whatsapp-fields select,.whatsapp-fields input{min-width:0}
