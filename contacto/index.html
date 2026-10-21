@@ -19,7 +19,7 @@
 <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 <div><label>Nombre y apellidos</label><input name='name' required></div>
 <div><label>Email</label><input type='email' name='email' required></div>
-<div><label>WhatsApp</label><input type='tel' name='whatsapp' placeholder='Ej.: +34 600 000 000' inputmode='tel'><p class='note'>Indica tu número si prefieres que te contacte por WhatsApp.</p></div>
+<div><label for='whatsapp'>WhatsApp (opcional)</label><input id='whatsapp' type='tel' name='whatsapp' placeholder='Ej.: +34 600 000 000' inputmode='tel' autocomplete='tel' pattern='\+[1-9][0-9 ()-]{7,19}' title='Incluye el prefijo internacional, por ejemplo +34 600 000 000.'><p class='note'>Opcional. Si indicas tu número, incluye el prefijo internacional de tu país (por ejemplo, España +34, Argentina +54 o Paraguay +595).</p></div>
 <div><label>Nivel de francés</label><select name='level'><option>No lo sé</option><option>A1</option><option>A2</option><option>B1</option><option>B2</option><option>C1 o superior</option></select></div>
 <div><label>¿Cuál es tu objetivo?</label><select name='objective'><option>Francés general</option><option>DELF</option><option>DELF Junior</option><option>DELF Prim</option><option>TCF</option><option>TEF</option><option>Francés profesional</option><option>Empresa</option></select></div>
 <div><label>¿Cómo prefieres que te contacte?</label><select name='contact_preference'><option>Cualquiera de los dos</option><option>Email</option><option>WhatsApp</option></select></div>
