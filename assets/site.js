@@ -96,7 +96,7 @@ if (toggle && menu) {
             Utilizamos cookies de analítica, como Google Analytics,
             para conocer cómo se utiliza nuestra web y mejorar nuestros contenidos.
             Puedes aceptar o rechazar estas cookies.
-            <a href="/politica-cookies/">Más información</a>
+            <a href="/politica-cookies/">Política de cookies</a>
           </p>
 
         </div>
