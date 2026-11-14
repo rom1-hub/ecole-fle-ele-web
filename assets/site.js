@@ -192,6 +192,31 @@ if (toggle && menu) {
 
   if (!classesLink || classesLink.parentElement.classList.contains('nav-dropdown')) return;
 
+  // Estilos propios del desplegable: evitan que el menú dependa de una
+  // versión antigua o cacheada de la hoja de estilos principal.
+  if (!document.getElementById('course-dropdown-styles')) {
+    const style = document.createElement('style');
+    style.id = 'course-dropdown-styles';
+    style.textContent = `
+      .menu .nav-dropdown{position:relative;display:flex;align-items:center;height:100%;flex:0 0 auto}
+      .menu .nav-dropdown-trigger{appearance:none;-webkit-appearance:none;display:inline-flex;align-items:center;gap:9px;margin:0;padding:0;border:0;background:transparent;color:inherit;font:inherit;font-size:14px;font-weight:650;line-height:1.4;white-space:nowrap;cursor:pointer}
+      .menu .nav-dropdown-trigger:after{content:"";width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);transition:transform .2s}
+      .menu .nav-dropdown-trigger:hover,.menu .nav-dropdown-trigger.active{color:var(--red,#c91420)}
+      .menu .nav-dropdown.is-open .nav-dropdown-trigger:after{transform:rotate(225deg)}
+      .menu .nav-dropdown-panel{display:none;position:absolute;top:calc(100% - 1px);left:0;min-width:290px;max-width:min(360px,90vw);padding:8px;background:#fff;border:1px solid #e3e8f0;border-radius:10px;box-shadow:0 14px 35px rgba(8,37,90,.16);z-index:9999}
+      .menu .nav-dropdown.is-open .nav-dropdown-panel{display:block}
+      .menu .nav-dropdown-panel a{display:block;width:100%;box-sizing:border-box;padding:11px 12px;border-radius:7px;color:#14213d;text-decoration:none;font-size:13px;line-height:1.4;white-space:normal}
+      .menu .nav-dropdown-panel a:hover,.menu .nav-dropdown-panel a.active{background:#f5f8fc;color:#c91420}
+      @media(max-width:1000px){
+        .menu .nav-dropdown{display:block;width:100%;height:auto}
+        .menu .nav-dropdown-trigger{display:flex;width:100%;padding:12px 0;text-align:left}
+        .menu .nav-dropdown-panel{position:static;min-width:0;max-width:none;margin:0 0 8px;padding:5px 0 5px 12px;border:0;border-left:2px solid #e3e8f0;border-radius:0;box-shadow:none}
+        .menu .nav-dropdown-panel a{padding:10px 8px}
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
   const wrapper = document.createElement('div');
   wrapper.className = 'nav-dropdown';
 
