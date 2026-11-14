@@ -37,7 +37,7 @@
 .a1-area-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}
 .a1-area-card{position:relative;border:1px solid var(--line);border-radius:16px;padding:24px 19px 20px;background:#fff;box-shadow:0 8px 25px rgba(8,37,90,.05);min-height:275px;display:flex;flex-direction:column}
 .a1-area-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);transition:.2s}
-.area-number{position:absolute;right:18px;top:16px;font-size:11px;color:#98a2b3;font-weight:800}
+.area-number{position:absolute;right:18px;top:16px;font-size:11px;color:#667085;font-weight:800}
 .area-symbol{width:48px;height:48px;border-radius:13px;background:#edf2fa;color:var(--navy);display:grid;place-items:center;font-size:23px;font-weight:850;margin-bottom:22px}
 .a1-area-card:nth-child(even) .area-symbol{background:#fff0f0;color:var(--red)}
 .a1-area-card h3{color:var(--navy);font-size:19px;margin:0 0 8px}
