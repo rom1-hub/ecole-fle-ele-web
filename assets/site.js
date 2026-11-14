@@ -181,13 +181,14 @@ if (toggle && menu) {
 
 })();
 
-// Desplegable de niveles dentro de «Clases online».
+// Menú común de niveles: se inserta en todas las páginas que tengan el enlace «Clases».
 (function () {
   const menu = document.querySelector('.menu');
   if (!menu) return;
 
   const classesLink = Array.from(menu.querySelectorAll('a'))
-    .find(link => /clases-frances-online\/?$/.test(link.getAttribute('href') || ''));
+    .find(link => /^(clases|clases online)$/i.test(link.textContent.trim()) ||
+      /clases-frances-(online|a1-online|a2-online|b1-online|b2-online)\/?$/.test(link.getAttribute('href') || ''));
 
   if (!classesLink || classesLink.parentElement.classList.contains('nav-dropdown')) return;
 
@@ -203,32 +204,33 @@ if (toggle && menu) {
   const panel = document.createElement('div');
   panel.className = 'nav-dropdown-panel';
 
-  const a1Url = new URL('../clases-frances-a1-online/', classesLink.href).href;
-  const a1 = document.createElement('a');
-  a1.href = a1Url;
-  a1.innerHTML = '<span>A1 · Francés para principiantes</span><small class="nav-dropdown-available">Disponible</small>';
-
   const levels = [
-    ['A2 · Francés elemental', '../clases-frances-a2-online/'],
-    ['B1 · Francés intermedio', '../clases-frances-b1-online/'],
-    ['B2 · Francés intermedio avanzado', '../clases-frances-b2-online/']
+    ['A1 · Francés para principiantes', '/clases-frances-a1-online/'],
+    ['A2 · Francés elemental', '/clases-frances-a2-online/'],
+    ['B1 · Francés intermedio', '/clases-frances-b1-online/'],
+    ['B2 · Francés intermedio avanzado', '/clases-frances-b2-online/']
   ];
 
-  panel.appendChild(a1);
-  levels.forEach(([label, url]) => {
+  levels.forEach(([label, path], index) => {
     const item = document.createElement('a');
-    item.href = new URL(url, classesLink.href).href;
+    item.href = path;
     item.textContent = label;
+    if (window.location.pathname.replace(/\/$/, '') === path.replace(/\/$/, '')) {
+      item.classList.add('active');
+      trigger.classList.add('active');
+      item.setAttribute('aria-current', 'page');
+    }
+    if (index === 0) {
+      const status = document.createElement('small');
+      status.className = 'nav-dropdown-available';
+      status.textContent = 'Disponible';
+      item.appendChild(status);
+    }
     panel.appendChild(item);
   });
 
   wrapper.append(trigger, panel);
   classesLink.replaceWith(wrapper);
-
-  if (classesLink.classList.contains('active') ||
-      window.location.pathname.includes('/clases-frances-a1-online/')) {
-    trigger.classList.add('active');
-  }
 
   trigger.addEventListener('click', () => {
     const open = wrapper.classList.toggle('is-open');
