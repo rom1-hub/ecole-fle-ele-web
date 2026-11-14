@@ -206,7 +206,7 @@ if (toggle && menu) {
   const a1Url = new URL('../clases-frances-a1-online/', classesLink.href).href;
   const a1 = document.createElement('a');
   a1.href = a1Url;
-  a1.textContent = 'A1 · Francés para principiantes';
+  a1.innerHTML = '<span>A1 · Francés para principiantes</span><small class="nav-dropdown-available">Disponible</small>';
 
   const levels = [
     ['A2 · Francés elemental', 'Próximamente'],
