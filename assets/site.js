@@ -180,3 +180,61 @@ if (toggle && menu) {
   }
 
 })();
+
+// Menú común de niveles: se inserta en todas las páginas que tengan el enlace «Clases».
+(function () {
+  const menu = document.querySelector('.menu');
+  if (!menu) return;
+
+  const classesLink = Array.from(menu.querySelectorAll('a'))
+    .find(link => /^(clases|clases online)$/i.test(link.textContent.trim()) ||
+      /clases-frances-(online|a1-online|a2-online|b1-online|b2-online)\/?$/.test(link.getAttribute('href') || ''));
+
+  if (!classesLink || classesLink.parentElement.classList.contains('nav-dropdown')) return;
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'nav-dropdown';
+
+  const trigger = document.createElement('button');
+  trigger.type = 'button';
+  trigger.className = 'nav-dropdown-trigger';
+  trigger.textContent = 'Clases online';
+  trigger.setAttribute('aria-expanded', 'false');
+
+  const panel = document.createElement('div');
+  panel.className = 'nav-dropdown-panel';
+
+  const levels = [
+    ['A1 · Francés para principiantes', '/clases-frances-a1-online/'],
+    ['A2 · Francés elemental', '/clases-frances-a2-online/'],
+    ['B1 · Francés intermedio', '/clases-frances-b1-online/'],
+    ['B2 · Francés intermedio avanzado', '/clases-frances-b2-online/']
+  ];
+
+  levels.forEach(([label, path]) => {
+    const item = document.createElement('a');
+    item.href = path;
+    item.textContent = label;
+    if (window.location.pathname.replace(/\/$/, '') === path.replace(/\/$/, '')) {
+      item.classList.add('active');
+      trigger.classList.add('active');
+      item.setAttribute('aria-current', 'page');
+    }
+    panel.appendChild(item);
+  });
+
+  wrapper.append(trigger, panel);
+  classesLink.replaceWith(wrapper);
+
+  trigger.addEventListener('click', () => {
+    const open = wrapper.classList.toggle('is-open');
+    trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  document.addEventListener('click', event => {
+    if (!wrapper.contains(event.target)) {
+      wrapper.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();

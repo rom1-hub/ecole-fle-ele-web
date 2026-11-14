@@ -1,11 +1,14 @@
 # Legacy URLs from the current IONOS site
-/clases-frances-general/ /clases-frances-online/ 301
+/clases-frances-general/ /clases-frances-a1-online/ 301
 /preparacion-delf-dalf-tcf/ /preparacion-examenes-frances/ 301
 /sobre-mi/ /sobre-mi/ 301
 /contacto/ /contacto/ 301
 /blog/ /blog/ 301
+# The old general classes URL now points to the A1 entry course
+/clases-frances-online/ /clases-frances-a1-online/ 301
+
 # Legacy file-style URLs used by the previous static build
-/pages/frances-general.html /clases-frances-online/ 301
+/pages/frances-general.html /clases-frances-a1-online/ 301
 /pages/examenes.html /preparacion-examenes-frances/ 301
 /pages/frances-profesional.html /frances-profesional/ 301
 /pages/empresas.html /frances-para-empresas/ 301

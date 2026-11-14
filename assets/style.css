@@ -285,3 +285,25 @@ form{display:grid;gap:14px}label{font-weight:750;font-size:13px;color:var(--navy
 /* Error visible de validación del campo WhatsApp */
 .contact-box form .whatsapp-error{margin:8px 0 0;color:#c62828;font-size:13px;font-weight:600;line-height:1.45}
 .contact-box form .whatsapp-error[hidden]{display:none!important}
+
+/* Menú desplegable de cursos por nivel */
+.nav-dropdown{position:relative;display:flex;align-items:center;height:100%}
+.nav-dropdown-trigger{position:relative;padding:34px 0;border:0;background:transparent;color:inherit;font:inherit;font-size:14px;font-weight:650;cursor:pointer}
+.nav-dropdown-trigger:after{content:"";display:inline-block;width:7px;height:7px;margin:0 0 3px 9px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);transition:transform .2s}
+.nav-dropdown-trigger:hover,.nav-dropdown-trigger.active{color:var(--red)}
+.nav-dropdown.is-open .nav-dropdown-trigger:after{transform:rotate(225deg);margin-bottom:0}
+.nav-dropdown-panel{display:none;position:absolute;top:calc(100% - 8px);left:-18px;min-width:285px;padding:9px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 14px 35px rgba(8,37,90,.14);z-index:80}
+.nav-dropdown:hover .nav-dropdown-panel,.nav-dropdown:focus-within .nav-dropdown-panel,.nav-dropdown.is-open .nav-dropdown-panel{display:block}
+.nav-dropdown-panel a,.nav-dropdown-coming{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;padding:11px 12px;border-radius:8px;font-size:13px;line-height:1.4;color:var(--ink);white-space:nowrap}
+.nav-dropdown-panel a:hover{background:var(--light);color:var(--red)}
+.nav-dropdown-coming{color:#7b8494;cursor:default}
+.nav-dropdown-coming small{flex-shrink:0;padding:3px 7px;border-radius:20px;background:#f1f3f6;color:#667085;font-size:10px;font-weight:650}
+@media(max-width:1000px){
+  .nav-dropdown{display:block;width:100%;height:auto}
+  .nav-dropdown-trigger{display:block;width:100%;padding:12px 0;text-align:left}
+  .nav-dropdown-panel{position:static;min-width:0;margin:0 0 8px;padding:5px 0 5px 12px;border:0;border-left:2px solid var(--line);border-radius:0;box-shadow:none}
+  .nav-dropdown-panel a,.nav-dropdown-coming{white-space:normal;padding:10px 8px}
+  .nav-dropdown:hover .nav-dropdown-panel{display:none}
+  .nav-dropdown:focus-within .nav-dropdown-panel,.nav-dropdown.is-open .nav-dropdown-panel{display:block}
+}
+.nav-dropdown-available{flex-shrink:0;padding:3px 7px;border-radius:20px;background:#e8f5ec;color:#237443;font-size:10px;font-weight:700}
