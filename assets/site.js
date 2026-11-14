@@ -209,19 +209,16 @@ if (toggle && menu) {
   a1.innerHTML = '<span>A1 · Francés para principiantes</span><small class="nav-dropdown-available">Disponible</small>';
 
   const levels = [
-    ['A2 · Francés elemental', 'Próximamente'],
-    ['B1 · Francés intermedio', 'Próximamente'],
-    ['B2 · Francés intermedio avanzado', 'Próximamente']
+    ['A2 · Francés elemental', '../clases-frances-a2-online/'],
+    ['B1 · Francés intermedio', '../clases-frances-b1-online/'],
+    ['B2 · Francés intermedio avanzado', '../clases-frances-b2-online/']
   ];
 
   panel.appendChild(a1);
-  levels.forEach(([label, status]) => {
-    const item = document.createElement('span');
-    item.className = 'nav-dropdown-coming';
-    item.setAttribute('aria-disabled', 'true');
-    item.innerHTML = '<span></span><small></small>';
-    item.querySelector('span').textContent = label;
-    item.querySelector('small').textContent = status;
+  levels.forEach(([label, url]) => {
+    const item = document.createElement('a');
+    item.href = new URL(url, classesLink.href).href;
+    item.textContent = label;
     panel.appendChild(item);
   });
 
