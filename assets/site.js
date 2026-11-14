@@ -211,7 +211,7 @@ if (toggle && menu) {
     ['B2 · Francés intermedio avanzado', '/clases-frances-b2-online/']
   ];
 
-  levels.forEach(([label, path], index) => {
+  levels.forEach(([label, path]) => {
     const item = document.createElement('a');
     item.href = path;
     item.textContent = label;
@@ -219,12 +219,6 @@ if (toggle && menu) {
       item.classList.add('active');
       trigger.classList.add('active');
       item.setAttribute('aria-current', 'page');
-    }
-    if (index === 0) {
-      const status = document.createElement('small');
-      status.className = 'nav-dropdown-available';
-      status.textContent = 'Disponible';
-      item.appendChild(status);
     }
     panel.appendChild(item);
   });
