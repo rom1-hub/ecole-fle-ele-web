@@ -42,7 +42,7 @@
 .a1-area-card:nth-child(even) .area-symbol{background:#fff0f0;color:var(--red)}
 .a1-area-card h3{color:var(--navy);font-size:19px;margin:0 0 8px}
 .a1-area-card p{color:var(--muted);font-size:13px;line-height:1.55;margin:0 0 18px}
-.a1-more{margin-top:auto;border:0;border-top:1px solid var(--line);padding:14px 0 0;background:none;color:var(--red);font:800 12px inherit;text-align:left;cursor:pointer;display:flex;justify-content:space-between}
+.a1-more{margin-top:auto;border:0;border-top:1px solid var(--line);padding:14px 0 0;background:none;color:var(--red);font-family:inherit;font-size:12px;font-weight:800;text-align:left;cursor:pointer;display:flex;justify-content:space-between}
 .a1-objectives{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .a1-objectives article{background:#fff;border:1px solid var(--line);border-radius:15px;padding:25px 22px}
 .a1-objectives article>span{color:var(--red);font-size:12px;font-weight:850}
