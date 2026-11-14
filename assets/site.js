@@ -180,3 +180,68 @@ if (toggle && menu) {
   }
 
 })();
+
+// Desplegable de niveles dentro de «Clases online».
+(function () {
+  const menu = document.querySelector('.menu');
+  if (!menu) return;
+
+  const classesLink = Array.from(menu.querySelectorAll('a'))
+    .find(link => /clases-frances-online\/?$/.test(link.getAttribute('href') || ''));
+
+  if (!classesLink || classesLink.parentElement.classList.contains('nav-dropdown')) return;
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'nav-dropdown';
+
+  const trigger = document.createElement('button');
+  trigger.type = 'button';
+  trigger.className = 'nav-dropdown-trigger';
+  trigger.textContent = 'Clases online';
+  trigger.setAttribute('aria-expanded', 'false');
+
+  const panel = document.createElement('div');
+  panel.className = 'nav-dropdown-panel';
+
+  const a1Url = new URL('../clases-frances-a1-online/', classesLink.href).href;
+  const a1 = document.createElement('a');
+  a1.href = a1Url;
+  a1.textContent = 'A1 · Francés para principiantes';
+
+  const levels = [
+    ['A2 · Francés elemental', 'Próximamente'],
+    ['B1 · Francés intermedio', 'Próximamente'],
+    ['B2 · Francés intermedio avanzado', 'Próximamente']
+  ];
+
+  panel.appendChild(a1);
+  levels.forEach(([label, status]) => {
+    const item = document.createElement('span');
+    item.className = 'nav-dropdown-coming';
+    item.setAttribute('aria-disabled', 'true');
+    item.innerHTML = '<span></span><small></small>';
+    item.querySelector('span').textContent = label;
+    item.querySelector('small').textContent = status;
+    panel.appendChild(item);
+  });
+
+  wrapper.append(trigger, panel);
+  classesLink.replaceWith(wrapper);
+
+  if (classesLink.classList.contains('active') ||
+      window.location.pathname.includes('/clases-frances-a1-online/')) {
+    trigger.classList.add('active');
+  }
+
+  trigger.addEventListener('click', () => {
+    const open = wrapper.classList.toggle('is-open');
+    trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  document.addEventListener('click', event => {
+    if (!wrapper.contains(event.target)) {
+      wrapper.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
