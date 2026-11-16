@@ -275,19 +275,29 @@ if (toggle && menu) {
   });
 })();
 
-// Menú desplegable de exámenes: índice general y páginas de preparación.
+// Menú desplegable de exámenes: funciona igual que «Clases online».
+// El texto «Exámenes» es solo un activador; no enlaza a la página índice.
 (function () {
   const menu = document.querySelector('.menu');
   if (!menu) return;
 
-  const examsLink = Array.from(menu.querySelectorAll('a'))
-    .find(link => /^exámenes?$/i.test(link.textContent.trim()) ||
-      /preparacion-examenes-frances\/?$/.test(link.getAttribute('href') || ''));
+  const normalize = value => (value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .trim()
+    .toLowerCase();
+
+  const examsLink = Array.from(menu.querySelectorAll('a')).find(link => {
+    const label = normalize(link.textContent);
+    const href = link.getAttribute('href') || '';
+    return label === 'examen' || label === 'examenes' ||
+      /preparacion-examenes-frances\/?$/i.test(href);
+  });
 
   if (!examsLink || examsLink.parentElement.classList.contains('nav-dropdown')) return;
 
   const wrapper = document.createElement('div');
-  wrapper.className = 'nav-dropdown nav-dropdown-exams';
+  wrapper.className = 'nav-dropdown';
 
   const trigger = document.createElement('button');
   trigger.type = 'button';
@@ -298,29 +308,28 @@ if (toggle && menu) {
 
   const panel = document.createElement('div');
   panel.className = 'nav-dropdown-panel';
-  panel.id = 'exam-preparation-menu';
+  panel.id = 'exam-level-menu';
   trigger.setAttribute('aria-controls', panel.id);
 
-  const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
-  const items = [
-    { label: 'Preparación de exámenes', path: '/preparacion-examenes-frances/', available: true },
-    { label: 'DELF A1 · Prim, Junior y Tout public', path: '/preparacion-delf-a1/', available: true },
-    { label: 'DELF A2', path: '/preparacion-delf-a2/', available: false },
-    { label: 'DELF B1', path: '/preparacion-delf-b1/', available: false },
-    { label: 'DELF B2', path: '/preparacion-delf-b2/', available: false },
-    { label: 'TCF', path: '/preparacion-tcf/', available: false },
-    { label: 'TEF', path: '/preparacion-tef/', available: false }
+  const currentPath = window.location.pathname.replace(/\/$/, '');
+  const exams = [
+    ['DELF A1 · Prim, Junior y Tout public', '/preparacion-delf-a1/', true],
+    ['DELF A2', '/preparacion-delf-a2/', false],
+    ['DELF B1', '/preparacion-delf-b1/', false],
+    ['DELF B2', '/preparacion-delf-b2/', false],
+    ['TCF', '/preparacion-tcf/', false],
+    ['TEF', '/preparacion-tef/', false]
   ];
 
-  items.forEach(({ label, path, available }) => {
+  exams.forEach(([label, path, available]) => {
     if (available) {
       const item = document.createElement('a');
       item.href = path;
       item.textContent = label;
       if (currentPath === path.replace(/\/$/, '')) {
         item.classList.add('active');
-        item.setAttribute('aria-current', 'page');
         trigger.classList.add('active');
+        item.setAttribute('aria-current', 'page');
       }
       panel.appendChild(item);
     } else {
