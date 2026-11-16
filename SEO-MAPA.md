@@ -18,11 +18,7 @@ Página principal: `/frances-profesional/`
 Temas: trabajar en Francia, fisioterapeutas, odontólogos y comunicación profesional.
 Página especializada: `/frances-para-fisioterapeutas/` — preparación lingüística específica para fisioterapeutas.
 
-### 4. Empresas
-Página principal: `/frances-para-empresas/`
-Temas: formación de equipos, comunicación profesional y francés para empresas.
-
-### 5. FLE
+### 4. FLE
 Página de apoyo: `/blog/que-es-fle/`
 Intención: explicar qué significa FLE (Français Langue Étrangère), para quién está pensado y cómo se relaciona con el aprendizaje del francés como lengua extranjera.
 Este contenido funciona como pieza informativa y enlaza hacia la oferta de clases.
