@@ -274,3 +274,93 @@ if (toggle && menu) {
     }
   });
 })();
+
+// Menú desplegable de exámenes: índice general y páginas de preparación.
+(function () {
+  const menu = document.querySelector('.menu');
+  if (!menu) return;
+
+  const examsLink = Array.from(menu.querySelectorAll('a'))
+    .find(link => /^exámenes?$/i.test(link.textContent.trim()) ||
+      /preparacion-examenes-frances\/?$/.test(link.getAttribute('href') || ''));
+
+  if (!examsLink || examsLink.parentElement.classList.contains('nav-dropdown')) return;
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'nav-dropdown nav-dropdown-exams';
+
+  const trigger = document.createElement('button');
+  trigger.type = 'button';
+  trigger.className = 'nav-dropdown-trigger';
+  trigger.textContent = 'Exámenes';
+  trigger.setAttribute('aria-expanded', 'false');
+  trigger.setAttribute('aria-haspopup', 'true');
+
+  const panel = document.createElement('div');
+  panel.className = 'nav-dropdown-panel';
+  panel.id = 'exam-preparation-menu';
+  trigger.setAttribute('aria-controls', panel.id);
+
+  const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+  const items = [
+    { label: 'Preparación de exámenes', path: '/preparacion-examenes-frances/', available: true },
+    { label: 'DELF A1 · Prim, Junior y Tout public', path: '/preparacion-delf-a1/', available: true },
+    { label: 'DELF A2', path: '/preparacion-delf-a2/', available: false },
+    { label: 'DELF B1', path: '/preparacion-delf-b1/', available: false },
+    { label: 'DELF B2', path: '/preparacion-delf-b2/', available: false },
+    { label: 'TCF', path: '/preparacion-tcf/', available: false },
+    { label: 'TEF', path: '/preparacion-tef/', available: false }
+  ];
+
+  items.forEach(({ label, path, available }) => {
+    if (available) {
+      const item = document.createElement('a');
+      item.href = path;
+      item.textContent = label;
+      if (currentPath === path.replace(/\/$/, '')) {
+        item.classList.add('active');
+        item.setAttribute('aria-current', 'page');
+        trigger.classList.add('active');
+      }
+      panel.appendChild(item);
+    } else {
+      const item = document.createElement('span');
+      item.className = 'nav-dropdown-coming';
+      item.textContent = label;
+      const status = document.createElement('small');
+      status.textContent = 'En preparación';
+      item.appendChild(status);
+      panel.appendChild(item);
+    }
+  });
+
+  wrapper.append(trigger, panel);
+  examsLink.replaceWith(wrapper);
+
+  trigger.addEventListener('click', () => {
+    menu.querySelectorAll('.nav-dropdown.is-open').forEach(openMenu => {
+      if (openMenu !== wrapper) {
+        openMenu.classList.remove('is-open');
+        const openTrigger = openMenu.querySelector('.nav-dropdown-trigger');
+        if (openTrigger) openTrigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+    const open = wrapper.classList.toggle('is-open');
+    trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  document.addEventListener('click', event => {
+    if (!wrapper.contains(event.target)) {
+      wrapper.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && wrapper.classList.contains('is-open')) {
+      wrapper.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.focus();
+    }
+  });
+})();
