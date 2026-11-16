@@ -13,10 +13,10 @@ Temas: aprender francés desde cero, mejorar comprensión oral, conversación, f
 Página principal: `/preparacion-examenes-frances/`
 Temas: DELF A1/A2/B1/B2, DELF Junior, DELF Prim, TCF, TEF, diferencias entre exámenes y organización del estudio.
 
-### 3. Francés profesional
-Página principal: `/frances-profesional/`
-Temas: trabajar en Francia, fisioterapeutas, odontólogos y comunicación profesional.
-Página especializada: `/frances-para-fisioterapeutas/` — preparación lingüística específica para fisioterapeutas.
+### 3. Francés para fisioterapeutas
+Página comercial principal: `/frances-para-fisioterapeutas/`
+Intención: preparación lingüística específica para fisioterapeutas que necesitan comunicarse con pacientes y desenvolverse en situaciones habituales de su actividad profesional.
+Página heredada: `/frances-profesional/` — se conserva accesible como página informativa, está marcada `noindex` y no debe promocionarse como una oferta general para profesionales.
 
 ### 4. FLE
 Página de apoyo: `/blog/que-es-fle/`
@@ -46,7 +46,7 @@ Este contenido funciona como pieza informativa y enlaza hacia la oferta de clase
 
 ## Estrategia profesional
 
-La página `/frances-profesional/` ya cubre fisioterapeutas y odontólogos. Antes de crear nuevas landing pages, se priorizarán artículos informativos que permitan comprobar demanda y desarrollar contenido específico. Si un tema demuestra intención de búsqueda suficiente, podrá evolucionar posteriormente a una página comercial propia.
+La única oferta comercial profesional actual es `/frances-para-fisioterapeutas/`. La URL `/frances-profesional/` se mantiene accesible por continuidad, pero no se incluye en el sitemap ni se indexa como landing comercial. Los artículos sobre otras profesiones, como odontología, se conservan como contenido informativo y no deben sugerir que existe un servicio específico para esos sectores.
 
 ## Regla editorial
 
