@@ -200,7 +200,7 @@ if (toggle && menu) {
     style.textContent = `
       .nav{gap:16px!important}
       .nav .brand{flex:0 0 auto!important;min-width:190px!important}
-      .nav .menu{display:flex!important;flex:1 1 auto!important;min-width:0!important;flex-wrap:nowrap!important;justify-content:space-between!important;gap:clamp(8px,.9vw,14px)!important}
+      .nav .menu{flex:1 1 auto!important;min-width:0!important;flex-wrap:nowrap!important;justify-content:space-between!important;gap:clamp(8px,.9vw,14px)!important}
       .nav .menu>a{flex:0 0 auto!important;white-space:nowrap!important}
       .nav .menu>.nav-dropdown{flex:0 0 auto!important}
       .nav>a.btn.btn-red{flex:0 0 auto!important;white-space:nowrap!important}
