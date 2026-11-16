@@ -198,6 +198,20 @@ if (toggle && menu) {
     const style = document.createElement('style');
     style.id = 'course-dropdown-styles';
     style.textContent = `
+      .nav{gap:16px!important}
+      .nav .brand{flex:0 0 auto!important;min-width:190px!important}
+      .nav .menu{display:flex!important;flex:1 1 auto!important;min-width:0!important;flex-wrap:nowrap!important;justify-content:space-between!important;gap:clamp(8px,.9vw,14px)!important}
+      .nav .menu>a{flex:0 0 auto!important;white-space:nowrap!important}
+      .nav .menu>.nav-dropdown{flex:0 0 auto!important}
+      .nav>a.btn.btn-red{flex:0 0 auto!important;white-space:nowrap!important}
+      @media(min-width:1001px) and (max-width:1120px){
+        .nav{gap:10px!important}
+        .nav .brand{min-width:160px!important}
+        .nav .brand img{width:56px!important;height:56px!important}
+        .nav .brand-text strong{font-size:17px!important}
+        .nav .menu{gap:8px!important;font-size:12px!important}
+        .nav>a.btn.btn-red{padding:8px 10px!important;font-size:11px!important}
+      }
       .menu .nav-dropdown{position:relative!important;display:flex!important;align-items:center!important;height:100%!important;flex:0 0 auto!important;min-width:max-content!important}
       .menu .nav-dropdown-trigger{appearance:none!important;-webkit-appearance:none!important;display:inline-flex!important;align-items:center!important;gap:9px!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:inherit!important;font:inherit!important;font-size:14px!important;font-weight:650!important;line-height:1.4!important;white-space:nowrap!important;cursor:pointer!important}
       .menu .nav-dropdown-trigger:after{content:""!important;display:inline-block!important;flex:0 0 7px!important;width:7px!important;height:7px!important;border:0!important;border-right:1.5px solid currentColor!important;border-bottom:1.5px solid currentColor!important;background:transparent!important;transform:rotate(45deg)!important;transition:transform .2s!important}
