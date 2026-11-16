@@ -349,11 +349,11 @@ if (toggle && menu) {
   const currentPath = window.location.pathname.replace(/\/$/, '');
   const exams = [
     ['DELF A1 · Prim, Junior y Tout public', '/preparacion-delf-a1/', true],
-    ['DELF A2', '/preparacion-delf-a2/', false],
-    ['DELF B1', '/preparacion-delf-b1/', false],
-    ['DELF B2', '/preparacion-delf-b2/', false],
-    ['TCF', '/preparacion-tcf/', false],
-    ['TEF', '/preparacion-tef/', false]
+    ['DELF A2 · Tout public y Junior/Scolaire', '/preparacion-delf-a2/', true],
+    ['DELF B1 · Tout public y Junior/Scolaire', '/preparacion-delf-b1/', true],
+    ['DELF B2 · Tout public y Junior/Scolaire', '/preparacion-delf-b2/', true],
+    ['TCF · Tout public, Canada, Québec e IRN', '/preparacion-tcf/', true],
+    ['TEF · Canada, Études, IRN y Québec', '/preparacion-tef/', true]
   ];
 
   exams.forEach(([label, path, available]) => {
