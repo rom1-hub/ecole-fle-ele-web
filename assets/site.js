@@ -231,7 +231,7 @@ if (toggle && menu) {
         .nav .brand-text strong{font-size:11px!important;letter-spacing:0!important}
         .nav .brand-text span{font-size:7px!important;letter-spacing:.5px!important}
         .nav .mobile-toggle{flex:0 0 22px!important;width:22px!important;padding:0!important;font-size:21px!important}
-        .nav>a.btn.btn-red{font-size:8px!important;padding:6px 6px!important;line-height:1.2!important}
+        .nav>a.btn.btn-red{font-size:9px!important;padding:6px 6px!important;line-height:1.2!important}
       }
       .menu .nav-dropdown{position:relative!important;display:flex!important;align-items:center!important;height:100%!important;flex:0 0 auto!important;min-width:max-content!important}
       .menu .nav-dropdown-trigger{appearance:none!important;-webkit-appearance:none!important;display:inline-flex!important;align-items:center!important;gap:9px!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:inherit!important;font:inherit!important;font-size:14px!important;font-weight:650!important;line-height:1.4!important;white-space:nowrap!important;cursor:pointer!important}
