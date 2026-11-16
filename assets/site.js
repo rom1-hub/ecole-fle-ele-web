@@ -198,19 +198,40 @@ if (toggle && menu) {
     const style = document.createElement('style');
     style.id = 'course-dropdown-styles';
     style.textContent = `
-      .nav{gap:16px!important}
-      .nav .brand{flex:0 0 auto!important;min-width:190px!important}
-      .nav .menu{flex:1 1 auto!important;min-width:0!important;flex-wrap:nowrap!important;justify-content:space-between!important;gap:clamp(8px,.9vw,14px)!important}
+      .nav{gap:clamp(10px,1.2vw,16px)!important}
+      .nav .brand{display:flex!important;flex:0 0 auto!important;min-width:max-content!important;white-space:nowrap!important;gap:8px!important}
+      .nav .brand img{flex:0 0 auto!important}
+      .nav .brand-text{flex:0 0 auto!important;white-space:nowrap!important}
+      .nav .brand-text strong{display:block!important;white-space:nowrap!important;font-size:17px!important;letter-spacing:0!important}
+      .nav .menu{flex:1 1 auto!important;min-width:0!important;flex-wrap:nowrap!important;justify-content:space-between!important;gap:clamp(7px,.8vw,12px)!important}
       .nav .menu>a{flex:0 0 auto!important;white-space:nowrap!important}
       .nav .menu>.nav-dropdown{flex:0 0 auto!important}
-      .nav>a.btn.btn-red{flex:0 0 auto!important;white-space:nowrap!important}
-      @media(min-width:1001px) and (max-width:1120px){
-        .nav{gap:10px!important}
-        .nav .brand{min-width:160px!important}
-        .nav .brand img{width:56px!important;height:56px!important}
-        .nav .brand-text strong{font-size:17px!important}
-        .nav .menu{gap:8px!important;font-size:12px!important}
-        .nav>a.btn.btn-red{padding:8px 10px!important;font-size:11px!important}
+      .nav>a.btn.btn-red{display:inline-flex!important;flex:0 0 auto!important;white-space:nowrap!important;word-break:normal!important;overflow-wrap:normal!important;font-size:12px!important;padding:10px 12px!important}
+      @media(min-width:1001px) and (max-width:1240px){
+        .nav{gap:9px!important}
+        .nav .brand{gap:6px!important}
+        .nav .brand img{width:54px!important;height:54px!important}
+        .nav .brand-text strong{font-size:14px!important}
+        .nav .brand-text span{font-size:9px!important;letter-spacing:1px!important}
+        .nav .menu{gap:7px!important;font-size:11px!important}
+        .nav .menu .nav-dropdown-trigger{font-size:11px!important}
+        .nav>a.btn.btn-red{padding:8px 9px!important;font-size:10px!important}
+      }
+      @media(max-width:1000px){
+        .nav{gap:8px!important}
+        .nav .brand{min-width:0!important;gap:6px!important}
+        .nav .brand img{width:50px!important;height:50px!important}
+        .nav .brand-text strong{font-size:14px!important}
+        .nav>a.btn.btn-red{font-size:10px!important;padding:8px 9px!important}
+      }
+      @media(max-width:650px){
+        .nav{gap:5px!important}
+        .nav .brand{gap:4px!important}
+        .nav .brand img{width:38px!important;height:38px!important}
+        .nav .brand-text strong{font-size:11px!important;letter-spacing:0!important}
+        .nav .brand-text span{font-size:7px!important;letter-spacing:.5px!important}
+        .nav .mobile-toggle{flex:0 0 22px!important;width:22px!important;padding:0!important;font-size:21px!important}
+        .nav>a.btn.btn-red{font-size:8px!important;padding:6px 6px!important;line-height:1.2!important}
       }
       .menu .nav-dropdown{position:relative!important;display:flex!important;align-items:center!important;height:100%!important;flex:0 0 auto!important;min-width:max-content!important}
       .menu .nav-dropdown-trigger{appearance:none!important;-webkit-appearance:none!important;display:inline-flex!important;align-items:center!important;gap:9px!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:inherit!important;font:inherit!important;font-size:14px!important;font-weight:650!important;line-height:1.4!important;white-space:nowrap!important;cursor:pointer!important}
