@@ -1,0 +1,40 @@
+/* Página comercial de preparación DELF A1. Mantiene la identidad visual de curso-a1.css. */
+.delf-a1-hero .a1-level-panel{padding:30px 26px}
+.delf-a1-mark{display:block;font-size:clamp(48px,6vw,76px);line-height:1.08;font-weight:900;letter-spacing:-3px;color:#fff;margin:14px 0}
+.delf-a1-mark small{display:block;font-size:14px;letter-spacing:1px;font-weight:750;color:#dce6f6;margin-top:8px}
+.delf-a1-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.delf-a1-meta span{display:inline-flex;align-items:center;padding:7px 11px;border:1px solid #e7ebf1;border-radius:30px;background:#fff;color:#344054;font-size:12px;font-weight:700}
+.delf-a1-section-intro{max-width:780px;margin:0 auto 34px;text-align:center;color:#475467}
+.delf-a1-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.delf-a1-card{border:1px solid var(--line);border-radius:17px;padding:25px 23px;background:#fff;box-shadow:0 8px 25px rgba(8,37,90,.045);display:flex;flex-direction:column}
+.delf-a1-card .card-kicker{font-size:11px;font-weight:850;letter-spacing:1px;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.delf-a1-card h3{color:var(--navy);font-size:21px;line-height:1.2;margin:0 0 12px}
+.delf-a1-card p{font-size:14px;color:#475467;margin:0 0 12px}
+.delf-a1-card ul{padding-left:19px;margin:3px 0 0;color:#475467;font-size:13px}
+.delf-a1-card li{padding:0 0 7px}
+.delf-a1-card .card-note{margin-top:auto;padding-top:15px;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
+.delf-a1-card.featured{border-top:4px solid var(--red)}
+.delf-a1-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:15px;background:#fff}
+.delf-a1-table{width:100%;border-collapse:collapse;min-width:650px}
+.delf-a1-table th,.delf-a1-table td{padding:16px 18px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.delf-a1-table th{background:#f5f8fc;color:var(--navy);font-size:13px}
+.delf-a1-table td{font-size:14px;color:#475467}
+.delf-a1-table td strong{color:var(--navy)}
+.delf-a1-table tr:last-child td{border-bottom:0}
+.delf-a1-score{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.delf-a1-score>div{background:#f5f8fc;border-radius:13px;padding:19px;text-align:center}
+.delf-a1-score strong{display:block;font-size:28px;color:var(--navy);line-height:1.2}
+.delf-a1-score span{display:block;color:#667085;font-size:12px;margin-top:5px}
+.delf-a1-examples{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.delf-a1-example{padding:21px 22px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.delf-a1-example strong{display:block;color:var(--navy);font-size:16px;margin-bottom:7px}
+.delf-a1-example p{font-size:13px;color:#667085;margin:0}
+.delf-a1-callout{margin-top:28px;padding:23px 25px;border-left:4px solid var(--red);background:#f5f8fc;border-radius:0 12px 12px 0}
+.delf-a1-callout strong{color:var(--navy)}
+.delf-a1-callout p{color:#475467;margin:5px 0 0}
+.delf-a1-link-list{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.delf-a1-link-list a{color:var(--red);font-size:13px;font-weight:750;text-decoration:underline;text-underline-offset:3px}
+.delf-a1-note{font-size:12px;color:#667085;margin-top:17px}
+@media(max-width:900px){.delf-a1-cards{grid-template-columns:1fr 1fr}.delf-a1-cards .delf-a1-card:last-child{grid-column:1/-1}}
+@media(max-width:760px){.delf-a1-cards,.delf-a1-examples{grid-template-columns:1fr}.delf-a1-cards .delf-a1-card:last-child{grid-column:auto}.delf-a1-score{grid-template-columns:1fr}.delf-a1-score>div{display:flex;align-items:center;justify-content:center;gap:12px}.delf-a1-score span{margin:0}}
+@media(max-width:480px){.delf-a1-table th,.delf-a1-table td{padding:12px}.delf-a1-meta{gap:7px}.delf-a1-meta span{font-size:11px}}
