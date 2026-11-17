@@ -225,6 +225,7 @@ if (toggle && menu) {
         .nav>a.btn.btn-red{font-size:10px!important;padding:8px 9px!important}
       }
       @media(min-width:1001px){
+        .header .nav{width:min(1400px,calc(100% - 48px))!important}
         .nav .menu{justify-content:center!important;gap:clamp(10px,1.1vw,16px)!important}
       }
       @media(max-width:650px){
