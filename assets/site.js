@@ -224,6 +224,9 @@ if (toggle && menu) {
         .nav .brand-text strong{font-size:14px!important}
         .nav>a.btn.btn-red{font-size:10px!important;padding:8px 9px!important}
       }
+      @media(min-width:1001px){
+        .nav .menu{justify-content:center!important;gap:clamp(10px,1.1vw,16px)!important}
+      }
       @media(max-width:650px){
         .nav{gap:5px!important}
         .nav .brand{gap:4px!important}
