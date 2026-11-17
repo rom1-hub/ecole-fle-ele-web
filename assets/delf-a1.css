@@ -38,3 +38,9 @@
 @media(max-width:900px){.delf-a1-cards{grid-template-columns:1fr 1fr}.delf-a1-cards .delf-a1-card:last-child{grid-column:1/-1}}
 @media(max-width:760px){.delf-a1-cards,.delf-a1-examples{grid-template-columns:1fr}.delf-a1-cards .delf-a1-card:last-child{grid-column:auto}.delf-a1-score{grid-template-columns:1fr}.delf-a1-score>div{display:flex;align-items:center;justify-content:center;gap:12px}.delf-a1-score span{margin:0}}
 @media(max-width:480px){.delf-a1-table th,.delf-a1-table td{padding:12px}.delf-a1-meta{gap:7px}.delf-a1-meta span{font-size:11px}}
+
+/* Espaciado entre categorías de la página principal del blog */
+.blog-index .delf-a1-cards + .section-title{margin-top:74px}
+@media(max-width:650px){
+  .blog-index .delf-a1-cards + .section-title{margin-top:55px}
+}
