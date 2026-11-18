@@ -412,3 +412,23 @@ if (toggle && menu) {
     }
   });
 })();
+
+
+// Acceso a COQ: plataforma independiente de autoaprendizaje de École FLE et ELE.
+(function () {
+  const menu = document.querySelector('.menu');
+  if (!menu || menu.querySelector('.coq-nav-link')) return;
+
+  const link = document.createElement('a');
+  link.className = 'coq-nav-link';
+  link.href = 'https://coq.ecole-fle-ele.com/';
+  link.textContent = 'COQ';
+  link.setAttribute('aria-label', 'Acceder a COQ, plataforma de autoaprendizaje');
+  link.title = 'Plataforma de autoaprendizaje de francés';
+
+  const contactLink = Array.from(menu.querySelectorAll('a'))
+    .find(item => /contacto/i.test(item.textContent.trim()));
+
+  if (contactLink) menu.insertBefore(link, contactLink);
+  else menu.appendChild(link);
+})();
