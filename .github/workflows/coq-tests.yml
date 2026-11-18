@@ -1,0 +1,43 @@
+name: COQ conjugation tests
+
+on:
+  push:
+    branches:
+      - integracion-coq
+    paths:
+      - "coq/conjugacion.html"
+      - "coq/js/**"
+      - "coq/backend/**"
+      - "coq/requirements.txt"
+      - "coq/data/verbs/**"
+      - "coq/tests/**"
+      - ".github/workflows/coq-tests.yml"
+  pull_request:
+    branches:
+      - integracion-coq
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Run COQ JavaScript and Python tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Run JavaScript tests
+        run: node --test coq/tests/*.test.js
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Python dependencies
+        run: python -m pip install -r coq/requirements.txt
+      - name: Run Python practice tests
+        run: python -m unittest discover -s coq/tests -p "test_*.py"

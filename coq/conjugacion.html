@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071a3d">
+  <meta name="description" content="Consulta conjugaciones francesas o prepara una sesión de práctica personalizada en Coq.">
+  <title>Conjugación francesa · Coq</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/conjugation.css?v=practice-engine-1">
+  <script src="js/main.js" defer></script>
+  <script src="js/load-verb-database.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Coq, inicio"><span class="brand-mark" aria-hidden="true"></span><span>Coq</span></a>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-controls="nav-links" aria-expanded="false" aria-label="Abrir menú">☰</button>
+    <nav class="nav-links" id="nav-links" data-nav-links aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="conjugacion.html" aria-current="page">Conjugación</a>
+      <a href="gramatica.html">Gramática</a>
+      <a href="vocabulario.html">Vocabulario</a>
+    </nav>
+    <div class="nav-actions"><a class="button button-primary" href="conjugacion.html">Empezar a aprender <span aria-hidden="true">↗</span></a></div>
+  </div>
+</header>
+<main id="contenido">
+  <section class="page-hero conjugation-hero">
+    <div class="container">
+      <span class="eyebrow">Laboratorio de verbos</span>
+      <h1>La conjugación,<br><span class="text-gradient">a tu manera.</span></h1>
+      <p>Consulta las formas de un verbo o prepara una práctica adaptada a lo que quieres trabajar.</p>
+    </div>
+  </section>
+
+  <section class="conjugation-workspace container" aria-label="Herramienta de conjugación">
+    <div class="conjugation-tabs" role="tablist" aria-label="Modo de conjugación">
+      <button class="conjugation-tab is-active" id="tab-lookup" type="button" role="tab" aria-selected="true" aria-controls="panel-lookup" data-tab="lookup"><span aria-hidden="true">⌕</span> Ver un verbo</button>
+      <button class="conjugation-tab" id="tab-practice" type="button" role="tab" aria-selected="false" aria-controls="panel-practice" data-tab="practice"><span aria-hidden="true">↗</span> Practicar</button>
+    </div>
+
+    <section class="conjugation-panel" id="panel-lookup" role="tabpanel" aria-labelledby="tab-lookup" data-panel="lookup">
+      <div class="panel-heading"><div><span class="eyebrow">Consulta rápida</span><h2>Encuentra una conjugación</h2></div><p>Escribe el infinitivo en francés y elige el tiempo que quieres consultar.</p></div>
+      <form id="lookup-form" class="conjugation-form" onsubmit="event.preventDefault()">
+        <div class="form-field form-field-verb">
+          <label for="lookup-verb">Verbo francés</label>
+          <input id="lookup-verb" name="verb" type="search" placeholder="Ej. parler, être, aller…" autocomplete="off" spellcheck="false" aria-describedby="lookup-help">
+          <small id="lookup-help">Introduce el infinitivo, con o sin el prefijo « se ».</small>
+        </div>
+        <div class="form-field">
+          <label for="lookup-tense">Tiempo verbal</label>
+          <select id="lookup-tense" name="tense">
+            <option value="" disabled selected>Seleccionar un tiempo verbal</option>
+            <option value="all">Todos los tiempos verbales</option>
+            <optgroup label="Indicatif">
+              <option value="present">Présent</option><option value="imparfait">Imparfait</option><option value="passe-compose">Passé composé</option><option value="plus-que-parfait">Plus-que-parfait</option><option value="passe-simple">Passé simple</option><option value="passe-anterieur">Passé antérieur</option><option value="futur-simple">Futur simple</option><option value="futur-anterieur">Futur antérieur</option>
+            </optgroup>
+            <optgroup label="Subjonctif">
+              <option value="subjonctif-present">Présent</option><option value="subjonctif-passe">Passé</option><option value="subjonctif-imparfait">Imparfait</option><option value="subjonctif-plus-que-parfait">Plus-que-parfait</option>
+            </optgroup>
+            <optgroup label="Conditionnel">
+              <option value="conditionnel-present">Présent</option><option value="conditionnel-passe">Passé</option>
+            </optgroup>
+            <optgroup label="Impératif"><option value="imperatif-present">Présent</option><option value="imperatif-passe">Passé</option></optgroup>
+            
+          </select>
+        </div>
+        <div class="form-actions"><button class="button button-primary" type="submit">Buscar <span aria-hidden="true">→</span></button><button class="button button-secondary" type="reset">Reiniciar</button></div>
+      </form>
+    </section>
+
+    <section class="conjugation-panel" id="panel-practice" role="tabpanel" aria-labelledby="tab-practice" data-panel="practice" hidden>
+      <div class="panel-heading"><div><span class="eyebrow">Práctica personalizada</span><h2>Prepara tu sesión</h2></div><p>Combina los filtros para trabajar los verbos y las formas que necesitas reforzar.</p></div>
+      <form id="practice-form" class="conjugation-form practice-form">
+        <div class="form-field form-field-verb">
+          <label for="practice-verb">Verbo francés</label>
+          <input id="practice-verb" name="verb" type="search" placeholder="Opcional: parler, être, aller…" autocomplete="off" spellcheck="false">
+          <small>Opcional. Si eliges un verbo, los filtros se adaptan a él; si lo dejas vacío, puedes practicar una familia o un grupo.</small>
+        </div>
+        <div class="form-field">
+          <label for="practice-tense">Tiempo verbal</label>
+          <select id="practice-tense" name="tenses" required>
+            <option value="" disabled selected>Seleccionar un tiempo verbal</option>
+            <optgroup label="Indicatif">
+              <option value="present">Présent</option><option value="imparfait">Imparfait</option><option value="passe-compose">Passé composé</option><option value="plus-que-parfait">Plus-que-parfait</option><option value="passe-simple">Passé simple</option><option value="passe-anterieur">Passé antérieur</option><option value="futur-simple">Futur simple</option><option value="futur-anterieur">Futur antérieur</option>
+            </optgroup>
+            <optgroup label="Subjonctif">
+              <option value="subjonctif-present">Présent</option><option value="subjonctif-passe">Passé</option><option value="subjonctif-imparfait">Imparfait</option><option value="subjonctif-plus-que-parfait">Plus-que-parfait</option>
+            </optgroup>
+            <optgroup label="Conditionnel">
+              <option value="conditionnel-present">Présent</option><option value="conditionnel-passe">Passé</option>
+            </optgroup>
+            <optgroup label="Impératif"><option value="imperatif-present">Présent</option><option value="imperatif-passe">Passé</option></optgroup>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="practice-family">Grupos verbales y familias</label>
+          <select id="practice-family" name="family">
+            <option value="tous-groupes-familles">Todos los grupos y familias</option>
+            <optgroup label="Primer grupo — no seleccionable">
+              <option value="premier-groupe">Todos los verbos del primer grupo</option>
+              <option value="premier-groupe-reguliers">Verbos regulares del primer grupo</option>
+              <option value="ger">Verbos en -GER</option>
+              <option value="cer">Verbos en -CER</option>
+              <option value="eler">Verbos en -ELER</option>
+              <option value="eter">Verbos en -ETER</option>
+              <option value="yer">Verbos en -YER</option>
+              <option value="e-accent">Verbos en -E (È) + CONSONANTE + ER</option>
+            </optgroup>
+            <optgroup label="Segundo grupo">
+              <option value="deuxieme-groupe">Todos los verbos del segundo grupo</option>
+            </optgroup>
+            <optgroup label="Tercer grupo — no seleccionable">
+              <option value="troisieme-groupe">Todos los verbos del tercer grupo</option>
+              <option value="ir">Verbos en -IR</option>
+              <option value="aitre">Verbos en -AÎTRE / -OÎTRE</option>
+              <option value="dre">Verbos en -DRE</option>
+              <option value="ire-uire">Verbos en -IRE / -UIRE (incluye faire y plaire)</option>
+              <option value="oir-oire">Verbos en -OIR / -OIRE</option>
+              <option value="ttre">Verbos en -TTRE (26 verbos en el catálogo)</option>
+              <option value="top-100">Los 100 verbos más comunes</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="practice-construction">Construcción</label>
+          <select id="practice-construction" name="construction">
+            <option value="">Pronominales y no pronominales</option>
+            <option value="pronominal">Verbos pronominales</option>
+            <option value="non-pronominal">Verbos no pronominales</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="practice-auxiliary">Verbos auxiliares</label>
+          <select id="practice-auxiliary" name="auxiliary">
+            <option value="">Avoir et être</option>
+            <option value="avoir">Avoir</option>
+            <option value="etre">Être</option>
+          </select>
+        </div>
+        <div class="form-actions"><button class="button button-primary" type="submit">Generar práctica <span aria-hidden="true">→</span></button><button class="button button-secondary" type="reset">Reiniciar filtros</button></div>
+      </form>
+    </section>
+  </section>
+
+  <section class="container conjugation-results" id="lookup-results" data-results-for="lookup" aria-live="polite" aria-atomic="false">
+    <div class="results-empty"><div class="results-symbol" aria-hidden="true">Aa</div><h2>Consulta de conjugación</h2><p>Busca un verbo para consultar sus formas y sus tiempos verbales.</p></div>
+  </section>
+  <section class="container conjugation-results" id="practice-results" data-results-for="practice" aria-live="polite" aria-atomic="false" hidden>
+    <div class="results-empty"><div class="results-symbol" aria-hidden="true">Aa</div><h2>Tu espacio de práctica</h2><p>Configura los filtros y genera una sesión de ejercicios. Los resultados de conjugación no se muestran en esta pestaña.</p></div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>Coq</span></a><p class="footer-brand-copy">Aprender francés a tu ritmo. Comprende, practica y avanza con autonomía.</p></div>
+      <div class="footer-links"><h3>Aprende</h3><a href="conjugacion.html">Conjugación</a><a href="gramatica.html">Gramática</a><a href="vocabulario.html">Vocabulario</a></div>
+      <div class="footer-links"><h3>La plataforma</h3><a href="index.html#metodo">Cómo funciona</a><a href="404.html">Página 404</a></div>
+    </div>
+    <div class="footer-bottom"><span>© Coq · Plataforma de autoaprendizaje de francés</span><span>Aprende. Practica. Progresa.</span></div>
+  </div>
+</footer>
+</body>
+</html>
