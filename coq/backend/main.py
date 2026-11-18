@@ -152,10 +152,16 @@ def canonical_verb_catalog() -> dict:
     catalog_path = ROOT / "data" / "verbs" / "local-database.js"
     catalog_parts_dir = ROOT / "data" / "verbs" / "catalog"
     try:
-        if catalog_parts_dir.is_dir():
-            source = "".join(part.read_text(encoding="utf-8") for part in sorted(catalog_parts_dir.glob("part-*.js")))
-        else:
-            source = catalog_path.read_text(encoding="utf-8")
+        if catalog_parts_dir.is_dir() and not catalog_path.exists():
+            # Reconstruir el archivo canónico a partir de fragmentos GitHub y conservar
+            # la ruta original que usan las pruebas y las herramientas de mantenimiento.
+            source_parts = sorted(catalog_parts_dir.glob("part-*.js"))
+            catalog_path.parent.mkdir(parents=True, exist_ok=True)
+            catalog_path.write_text(
+                "".join(part.read_text(encoding="utf-8") for part in source_parts),
+                encoding="utf-8",
+            )
+        source = catalog_path.read_text(encoding="utf-8")
         prefix = "window.COQ_VERBS="
         prefix_index = source.find(prefix)
         if prefix_index < 0:
