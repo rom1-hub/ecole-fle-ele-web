@@ -27,10 +27,12 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+      - name: Rebuild canonical verb catalog from Git fragments
+        run: cat coq/data/verbs/catalog/part-*.js > coq/data/verbs/local-database.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
       - name: Run JavaScript tests
         run: node --test coq/tests/*.test.js
       - name: Set up Python
