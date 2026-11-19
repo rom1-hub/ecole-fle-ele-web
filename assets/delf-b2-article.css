@@ -36,3 +36,19 @@
 .b2-final-cta h2{margin:0 0 12px;padding:0;border:0;font-size:25px}.b2-final-cta p{margin:0 0 18px}
 @media(max-width:850px){.b2-hero{padding:55px 0}.b2-hero-grid{grid-template-columns:1fr;gap:28px}.b2-hero-panel{max-width:520px}.b2-highlight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.b2-highlight-grid>div:nth-child(3){border-left:1px solid var(--b2-line)}}
 @media(max-width:560px){.b2-hero{padding:43px 0}.b2-hero h1{font-size:35px;letter-spacing:-.8px}.b2-lead{font-size:16px}.b2-hero-actions{display:grid;grid-template-columns:1fr}.b2-meta{display:grid;gap:6px}.b2-meta span+span:before{content:none}.b2-highlight-grid{grid-template-columns:1fr}.b2-highlight-grid>div,.b2-highlight-grid>div:first-child,.b2-highlight-grid>div:nth-child(3){min-height:84px;border-left:1px solid var(--b2-line);border-right:1px solid var(--b2-line);border-bottom:1px solid var(--b2-line)}.b2-article-section{padding-top:35px}.b2-toc{padding:18px}.b2-toc>div{display:grid;grid-template-columns:1fr 1fr}.b2-article-content>.b2-intro{font-size:16px}.b2-article-content p,.b2-article-content li{font-size:15px}.b2-final-cta{padding:23px 20px}}
+
+
+/* Refuerzo del fondo del panel B2: azul institucional */
+.b2-article-page .b2-hero .b2-hero-grid > .b2-hero-panel {
+  background: #08255a !important;
+  background-color: #08255a !important;
+  color: #ffffff !important;
+  border-color: #08255a !important;
+}
+.b2-article-page .b2-hero .b2-hero-grid > .b2-hero-panel .b2-panel-kicker,
+.b2-article-page .b2-hero .b2-hero-grid > .b2-hero-panel .b2-panel-mark,
+.b2-article-page .b2-hero .b2-hero-grid > .b2-hero-panel .b2-panel-mark small,
+.b2-article-page .b2-hero .b2-hero-grid > .b2-hero-panel p,
+.b2-article-page .b2-hero .b2-hero-grid > .b2-hero-panel .b2-panel-tag {
+  color: #ffffff !important;
+}
