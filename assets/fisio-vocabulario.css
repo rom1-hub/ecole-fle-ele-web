@@ -1,0 +1,43 @@
+/* Estilos exclusivos del artículo de vocabulario de fisioterapia.
+   La estructura principal reutiliza curso-a1.css y delf-a1.css. */
+.fisio-hero{padding-top:68px;padding-bottom:72px}
+.fisio-hero .a1-hero-grid{grid-template-columns:1.35fr .65fr}
+.fisio-hero .a1-hero-copy h1{max-width:820px}
+.fisio-hero-panel .delf-a1-mark{font-size:clamp(52px,6vw,78px)}
+.fisio-index-section{scroll-margin-top:24px}
+.fisio-index-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.fisio-index-card{min-height:220px;text-decoration:none;color:inherit;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.fisio-index-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(8,37,90,.10);border-color:#cbd5e1}
+.fisio-index-card h3{margin-bottom:9px}
+.fisio-index-card p{margin-bottom:20px}
+.fisio-index-link{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:13px;border-top:1px solid var(--line);color:var(--red);font-size:12px;font-weight:800}
+.fisio-section-heading{display:grid;grid-template-columns:.85fr 1.15fr;gap:55px;align-items:end;margin-bottom:28px}
+.fisio-section-heading h2{color:var(--navy);font-size:36px;line-height:1.17;margin:0}
+.fisio-section-heading>p{max-width:680px;margin:0;color:#475467}
+.fisio-vocab-section{scroll-margin-top:24px}
+.fisio-table{min-width:0}
+.fisio-table th:first-child,.fisio-table td:first-child{width:50%}
+.fisio-table td:nth-child(2){font-weight:600;color:var(--navy)}
+.fisio-back-index{display:inline-flex;margin-top:18px;color:var(--red);font-size:13px;font-weight:750;text-decoration:none}
+.fisio-back-index:hover{text-decoration:underline;text-underline-offset:3px}
+.fisio-language-note{margin-top:24px}
+.fisio-language-note p{line-height:1.7}
+@media(max-width:900px){
+ .fisio-index-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .fisio-section-heading{grid-template-columns:1fr;gap:12px}
+}
+@media(max-width:760px){
+ .fisio-hero{padding:48px 0}
+ .fisio-hero .a1-hero-grid{grid-template-columns:1fr;gap:30px}
+ .fisio-hero .a1-hero-copy h1{font-size:42px}
+ .fisio-hero-panel{max-width:420px;width:100%;margin:auto}
+ .fisio-section-heading h2{font-size:31px}
+ .fisio-table th,.fisio-table td{padding:13px 14px}
+}
+@media(max-width:520px){
+ .fisio-index-grid{grid-template-columns:1fr}
+ .fisio-index-card{min-height:0}
+ .fisio-hero .a1-hero-copy h1{font-size:36px}
+ .fisio-table th:first-child,.fisio-table td:first-child{width:46%}
+ .fisio-table th,.fisio-table td{padding:11px 10px;font-size:13px}
+}
