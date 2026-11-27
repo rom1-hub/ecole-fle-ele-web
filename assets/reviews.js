@@ -1,14 +1,12 @@
 
 (() => {
   const reviews = [
-    {text:"He tenido la oportunidad de dar clase con Romain y no puedo estar más contenta, es un gran profesional y me ha ayudado muchísimo, sin duda lo recomiendo al 100%.",name:"Angela D.",source:"Google"},
     {text:"Llevo 2 años con Romain Bouisson como profesor de francés. Gran profesional. Mi balance es muy positivo. Estoy contenta porque es muy respetuoso y se comunica siempre de forma clara y concisa. Además fomenta la participación y valora el esfuerzo del alumno dentro de las circunstancias de cada uno.",name:"Encar Q.",source:"Google"},
     {text:"Romain es un profesor excepcional. Metódico, responsable, y realmente eficiente. Ha dado clases a mi hijo y ha aprobado su examen con nota. Por supuesto, ahora está dando clases a mi hija y está muy contenta. Sin duda, muy recomendable.",name:"Ana M.",source:"Google"},
     {text:"¡100% RECOMENDABLE! Da gusto aprender un idioma con un profesional como Romain. Las clases son muy amenas y él siempre se asegura de que lo hayas entendido. Lo recomendaría a todo el mundo. ¡¡Muchísimas gracias Romain!!",name:"NA",source:"Google"},
     {text:"Llevo años ya con Romain y como profesor es un 10. Aprendes a la vez que disfrutas del idioma, trabajando tanto la gramática y vocabulario como conversación. He tenido varios profesores de francés y nunca nadie me ha explicado el francés para que pudiera entenderlo y mejorar mi nivel como Romain.",name:"Gabri",source:"Google"},
     {text:"Romain es un profesor excepcional. Es paciente, metódico y explica muy bien tanto lo fácil como lo difícil.",name:"Alumno/a",source:"Google"},
     {text:"Las clases de Romain son increíbles, 100% recomendadas.",name:"Alumno/a",source:"Google"},
-    {text:"Me preparó para el nivel B2 de francés después de muchos años sin estudiar nada, y he aprobado con un 91/100.",name:"Alumno/a",source:"Infoidiomas"},
     {text:"He aprendido mucho de gramática, de vocabulario y sobre todo de conversación. Da muy buenos consejos y tiene mucha paciencia.",name:"Alumno/a",source:"Infoidiomas"}
   ];
   document.querySelectorAll("[data-reviews-widget]").forEach(widget => {
