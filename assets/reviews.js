@@ -16,26 +16,28 @@
     const counter = widget.querySelector("[data-reviews-counter]");
     const dots = widget.querySelector("[data-reviews-dots]");
     if (!track || !prev || !next || !counter || !dots) return;
-    reviews.forEach(review => {
-      const card = document.createElement("article");
-      card.className = "review-card";
-      card.setAttribute("role","group");
-      card.setAttribute("aria-label","Opinión de " + review.name + " en " + review.source);
-      const stars = document.createElement("div");
-      stars.className = "review-card-stars";
-      stars.setAttribute("aria-label","5 de 5 estrellas");
-      stars.textContent = "★★★★★";
-      const quote = document.createElement("blockquote");
-      quote.textContent = "«" + review.text + "»";
-      const cite = document.createElement("cite");
-      cite.textContent = review.name;
-      const source = document.createElement("span");
-      source.className = "review-card-source";
-      source.textContent = "Opinión publicada en " + review.source;
-      cite.appendChild(source);
-      card.append(stars,quote,cite);
-      track.appendChild(card);
-    });
+    if (!track.querySelector(".review-card")) {
+      reviews.forEach(review => {
+        const card = document.createElement("article");
+        card.className = "review-card";
+        card.setAttribute("role","group");
+        card.setAttribute("aria-label","Opinión de " + review.name + " en " + review.source);
+        const stars = document.createElement("div");
+        stars.className = "review-card-stars";
+        stars.setAttribute("aria-label","5 de 5 estrellas");
+        stars.textContent = "★★★★★";
+        const quote = document.createElement("blockquote");
+        quote.textContent = "«" + review.text + "»";
+        const cite = document.createElement("cite");
+        cite.textContent = review.name;
+        const source = document.createElement("span");
+        source.className = "review-card-source";
+        source.textContent = "Opinión publicada en " + review.source;
+        cite.appendChild(source);
+        card.append(stars,quote,cite);
+        track.appendChild(card);
+      });
+    }
     let index = 0;
     let perView = 3;
     const getPerView = () => window.matchMedia("(max-width:600px)").matches ? 1 : window.matchMedia("(max-width:850px)").matches ? 2 : 3;
